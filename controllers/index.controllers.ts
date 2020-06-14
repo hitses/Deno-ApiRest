@@ -20,7 +20,23 @@ export const getUsers = ({ response }: { response: Response }) => {
   };
 };
 
-export const getUser = () => {};
+export const getUser = (
+  { params, response }: { params: { id: string }; response: Response },
+) => {
+  const userFound = users.find((user) => user.id === params.id);
+  if (userFound) {
+    response.status = 200;
+    response.body = {
+      message: "You got a single user",
+      userFound,
+    };
+  } else {
+    response.status = 404;
+    response.body = {
+      message: "User not found",
+    };
+  }
+};
 
 interface userBody {
   id: string;
