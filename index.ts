@@ -1,6 +1,6 @@
 import {Application} from "https://deno.land/x/oak/mod.ts";
 
-import router from './routes/indes.routes.ts';
+import router from './routes/index.routes.ts';
 
 const app = new Application();
 
