@@ -14,4 +14,6 @@ router.get('/users/:id', indexCtrl.getUser);
 
 router.post('/users', indexCtrl.createUser);
 
+router.delete('/users/:id', indexCtrl.deleteUser);
+
 export default router;
